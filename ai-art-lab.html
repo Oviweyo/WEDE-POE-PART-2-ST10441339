@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Art Lab | CTRL//FRAME</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .ai-form {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    #ai-preview {
+      margin-top: 2rem;
+      padding: 1rem;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header id="navbar">
+    <nav class="nav-container">
+      <h1 class="logo">CTRL<span>//</span>FRAME</h1>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="branches.html">Our Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="cta-btn">Get in Touch</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="section">
+    <h2 class="section-title">🧠 AI Art Lab</h2>
+    <p class="section-description">Describe your vision and generate a concept preview using AI-inspired prompts.</p>
+
+    <div class="content-block">
+      <h3>🖌️ Instructions</h3>
+      <ul>
+        <li>Write a short description of the artwork you imagine</li>
+        <li>Click “Generate Art Prompt” to preview your concept</li>
+      </ul>
+    </div>
+
+    <form class="ai-form">
+      <label for="prompt">Art Description</label>
+      <textarea id="prompt" rows="3" required></textarea>
+      <button type="submit" class="cta-btn">Generate Art Prompt</button>
+    </form>
+
+    <div id="ai-preview"></div>
+
+    <a href="branches.html" class="cta-btn">← Back to Our Work</a>
+  </main>
+
+  <footer id="footer">
+    <p>© 2025 CTRL//FRAME. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.querySelector('.ai-form');
+    const preview = document.getElementById('ai-preview');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const prompt = document.getElementById('prompt').value;
+      preview.innerHTML = `
+        <h3>Your AI Art Prompt</h3>
+        <p><em>"${prompt}"</em></p>
+        <p>Use this prompt in your favorite AI art tool to generate your piece.</p>
+      `;
+    });
+  </script>
+</body>
+</html>
